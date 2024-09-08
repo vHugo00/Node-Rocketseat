@@ -1,5 +1,3 @@
-// process.stdin.pipe(process.stdout)
-
 import { Readable } from 'node:stream'
 
 class OneToHundreadStream extends Readable {
@@ -8,7 +6,7 @@ class OneToHundreadStream extends Readable {
   _read() {
     const i = this.index++
     setTimeout(() => {
-      if (i > 100) {
+      if (i > 5) {
         this.push(null)
       } else {
         const buf = Buffer.from(String(i))
@@ -18,5 +16,11 @@ class OneToHundreadStream extends Readable {
   }
 }
 
-new OneToHundreadStream()
-  .pipe(process.stdout)
+fetch('http://localhost:33340', {
+  method: 'PUT',
+  body: new OneToHundreadStream(),
+}).then(response => {
+  return response.text()
+}).then(data => {
+  console.log(data);
+})
