@@ -1,1 +1,14 @@
-{"users":[{"id":"19e7d714-e0db-43e3-8eb8-79bda738cb21","name":"Vitor Hugo","email":"vv001226@gmail.com"},{"id":"a17fd27e-f878-4232-b1da-19c38889cbdc","name":"Vitor Hugo","email":"vv001226@gmail.com"}]}
+{
+  "users": [
+    {
+      "id": "19e7d714-e0db-43e3-8eb8-79bda738cb21",
+      "name": "Vitor Hugo",
+      "email": "vv001226@gmail.com"
+    },
+    {
+      "id": "a17fd27e-f878-4232-b1da-19c38889cbdc",
+      "name": "Vitor Hugo",
+      "email": "vv001226@gmail.com"
+    }
+  ]
+}
