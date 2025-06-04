@@ -1,27 +1,50 @@
 import http from 'node:http'
 
-import { json } from './middlewares/json.js'
-import { routes } from './routes.js'
-import { extractQueryParams } from './utils/extract-query-params.js'
+// - Criar usuários
+// - Listagem usuários
+// - Edição de usuários
+// - Remoção de usuários
 
-const server = http.createServer(async (req, res) => {
+// - HTTP
+//   - Método HTTP
+//   - URL
+
+// GET, POST, PUT, PATCH, DELETE
+
+// GET => Buscar um recurso do back-end
+// POST => Criar um recurso no back-end
+// PUT => Atualizar um recurso no back-end
+// PATCH => Atualizar uma informação específica de um recurso no back-end
+// DELETE => Deletar um recurso do back-end
+
+// GET /users => Buscando usuários no banc-end
+// POST /users => Criar um usuário no back-end
+
+// Stateful - Stateless
+
+// Cabeçalhos (Requisição/resposta) => Metadados
+
+// HTTP Status Code
+
+const users = []
+
+const server = http.createServer((req, res) => {
   const { method, url } = req
 
-  await json(req, res)
+  if (method === 'GET' && url === '/users') {
+    return res
+      .setHeader('Content-type', 'application/json')
+      .end(JSON.stringify(users))
+  }
 
-  const route = routes.find(route => {
-    return route.method === method && route.path.test(url)
-  })
+  if (method === 'POST' && url === '/users') {
+    users.push({
+      id: 1,
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+    })
 
-  if (route) {
-    const routeParams = req.url.match(route.path)
-
-    const { query, ...params } = routeParams.groups
-
-    req.params = params
-    req.query = query ? extractQueryParams(query) : {}
-
-    return route.handler(req, res)
+    return res.writeHead(201).end()
   }
 
   return res.writeHead(404).end()

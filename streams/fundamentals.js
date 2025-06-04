@@ -1,4 +1,9 @@
-import { Readable, Writable, Transform } from "node:stream";
+// Streams ->
+
+// process.stdin
+//   .pipe(process.stdout)
+
+import { Readable, Writable, Transform } from 'node:stream'
 
 class OneToHundredStream extends Readable {
   index = 1
@@ -14,16 +19,15 @@ class OneToHundredStream extends Readable {
 
         this.push(buf)
       }
-    }, 1000)
-
-
+    }, 1000);
   }
 }
 
 class InverseNumberStream extends Transform {
   _transform(chunk, encoding, callback) {
-    const tranformed = Number(chunk.toString()) * -1
-    callback(null, Buffer.from(String(tranformed)))
+    const transformed = Number(chunk.toString()) * -1
+
+    callback(null, Buffer.from(String(transformed)))
   }
 }
 
