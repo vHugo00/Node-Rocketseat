@@ -1,0 +1,1 @@
+Este repositório contém os conteúdos abordados no curso de Node.js da Rocketseat. Caso tenha curiosidade em conhecer o que foi desenvolvido, cada módulo está organizado em uma branch específica.
