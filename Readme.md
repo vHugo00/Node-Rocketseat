@@ -1,1 +1,3 @@
-Este repositório contém os conteúdos abordados no curso de Node.js da Rocketseat. Caso tenha curiosidade em conhecer o que foi desenvolvido, cada módulo está organizado em uma branch específica.
+## Criando API REST com Node.js
+
+Nesse módulo iremos desenvolver uma API REST, mas dessa vez utilizando o Fastify, Knex, TypeScript e outras ferramentas para auxiliar durante o desenvolvimento.
