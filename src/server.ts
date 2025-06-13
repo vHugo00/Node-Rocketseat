@@ -1,15 +1,13 @@
-type User = {
-  name: string;
-  age: number;
-};
+import fastify from "fastify";
 
-function isAdult(user: User): boolean {
-  return user.age >= 18;
-}
+const app = fastify();
 
-const justine = {
-  name: 'Justine',
-  age: 23,
-} satisfies User;
+app.get('/hello', () => {
+  return "Hello"
+})
 
-const isJustineAnAdult = isAdult(justine);
+app.listen({
+  port: 3334,
+}).then(() => {
+  console.log("HTTP server running");
+})
