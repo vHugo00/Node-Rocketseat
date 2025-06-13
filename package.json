@@ -1,29 +1,23 @@
 {
-  "name": "nodejs",
+  "name": "02-api-rest-nodejs",
   "version": "1.0.0",
-  "description": "Nesse módulo iremos desenvolver uma API REST, mas dessa vez utilizando o Fastify, Knex, TypeScript e outras ferramentas para auxiliar durante o desenvolvimento.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vHugo00/NodeJs.git"
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/vHugo00/NodeJs/issues"
-  },
-  "homepage": "https://github.com/vHugo00/NodeJs#readme",
   "devDependencies": {
-    "@types/node": "^24.0.0",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "@rocketseat/eslint-config": "3.0.11",
+    "@types/node": "24.0.0",
+    "eslint": "9.28.0",
+    "tsx": "4.20.2",
+    "typescript": "5.8.2"
   },
   "dependencies": {
-    "fastify": "^5.3.3"
+    "fastify": "5.3.3"
   }
 }
