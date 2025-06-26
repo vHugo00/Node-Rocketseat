@@ -3,8 +3,8 @@ import { env } from './env'
 
 app
   .listen({
-    port: env.PORT,
+    port: Number(process.env.PORT) || env.PORT,
   })
   .then(() => {
-    console.log(`HTTP Server Running! ${env.PORT} `)
+    console.log(`HTTP Server Running! ${process.env.PORT || env.PORT}`)
   })
